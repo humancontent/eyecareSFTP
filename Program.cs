@@ -1,15 +1,20 @@
 ﻿using System;
 using System.IO;
 using Renci.SshNet;
+using Microsoft.Extensions.Configuration;
 
 class Program
 {
     static void Main(string[] args)
     {
-        string host = "ecgsftp.blob.core.windows.net";
+        var config = new ConfigurationBuilder()
+    .SetBasePath(Directory.GetCurrentDirectory()) // Important
+    .AddJsonFile("appsettings.Development.json", optional: false)
+    .Build();
+        string host = config["FtpSettings:Host"];
         int port = 22;
-        string username = "ecgsftp.alexvanhuman";
-        string password = "2Dw6I/cAHcuIhEjEsXoUc4Afn35zt6yv"; // your actual password
+        string username = config["FtpSettings:Username"];
+        string password = config["FtpSettings:Password"];
         string remoteDirectory = "."; // start in root of container
         string localDirectory = @"C:\Temp\SftpFiles\";
 
