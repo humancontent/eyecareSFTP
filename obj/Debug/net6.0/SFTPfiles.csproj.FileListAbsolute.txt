@@ -47,10 +47,11 @@ C:\Users\human\Documents\eyecare\eyecareSFTP\obj\Debug\net6.0\SFTPfiles.Generate
 C:\Users\human\Documents\eyecare\eyecareSFTP\obj\Debug\net6.0\SFTPfiles.AssemblyInfoInputs.cache
 C:\Users\human\Documents\eyecare\eyecareSFTP\obj\Debug\net6.0\SFTPfiles.AssemblyInfo.cs
 C:\Users\human\Documents\eyecare\eyecareSFTP\obj\Debug\net6.0\SFTPfiles.csproj.CoreCompileInputs.cache
-C:\Users\human\Documents\eyecare\eyecareSFTP\obj\Debug\net6.0\SFTPfiles.csproj.CopyComplete
 C:\Users\human\Documents\eyecare\eyecareSFTP\obj\Debug\net6.0\SFTPfiles.dll
 C:\Users\human\Documents\eyecare\eyecareSFTP\obj\Debug\net6.0\refint\SFTPfiles.dll
 C:\Users\human\Documents\eyecare\eyecareSFTP\obj\Debug\net6.0\SFTPfiles.pdb
 C:\Users\human\Documents\eyecare\eyecareSFTP\obj\Debug\net6.0\SFTPfiles.genruntimeconfig.cache
 C:\Users\human\Documents\eyecare\eyecareSFTP\obj\Debug\net6.0\ref\SFTPfiles.dll
 C:\Users\human\Documents\eyecare\eyecareSFTP\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\human\Documents\eyecare\eyecareSFTP\obj\Debug\net6.0\SFTPfiles.sourcelink.json
+C:\Users\human\Documents\eyecare\eyecareSFTP\obj\Debug\net6.0\SFTPfiles.csproj.Up2Date

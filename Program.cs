@@ -17,8 +17,19 @@ class Program
         string password = config["FtpSettings:Password"];
         string remoteDirectory = "."; // start in root of container
         string localDirectory = @"C:\Temp\SftpFiles\";
+        string lastCheckFile = Path.Combine(localDirectory, "last-check.txt");
 
         Directory.CreateDirectory(localDirectory);
+
+        DateTime lastCheckDate = DateTime.MinValue;
+        if (File.Exists(lastCheckFile))
+        {
+            string content = File.ReadAllText(lastCheckFile).Trim();
+            if (DateTime.TryParse(content, out var parsedDate))
+            {
+                lastCheckDate = parsedDate;
+            }
+        }
 
         using (var sftp = new SftpClient(host, port, username, password))
         {
@@ -31,6 +42,14 @@ class Program
                 foreach (var file in files)
                 {
                     if (file.IsDirectory || file.Name.StartsWith(".")) continue;
+                    if (!(file.Name.StartsWith("EOD_Payments", StringComparison.OrdinalIgnoreCase) ||
+                         file.Name.StartsWith("EOD_Sales", StringComparison.OrdinalIgnoreCase) ||
+                         file.Name.StartsWith("EOD_TillShift", StringComparison.OrdinalIgnoreCase)))
+                        continue;
+
+                    // --- Step 2: Skip files older than last check ---
+                    if (file.LastWriteTime <= lastCheckDate)
+                        continue;
 
                     string localPath = Path.Combine(localDirectory, file.Name);
                     using (var fs = File.Create(localPath))
@@ -42,6 +61,9 @@ class Program
                 }
 
                 sftp.Disconnect();
+
+                File.WriteAllText(lastCheckFile, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+
             }
             catch (Exception ex)
             {

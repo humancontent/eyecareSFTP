@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SFTPfiles")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4e02a15f670e080e747173bf9c6dc8e0ff1c00e9")]
 [assembly: System.Reflection.AssemblyProductAttribute("SFTPfiles")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SFTPfiles")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
